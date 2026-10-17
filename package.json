@@ -9,5 +9,8 @@
   "private": true,
   "scripts": {
     "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^44.9.0"
   }
 }

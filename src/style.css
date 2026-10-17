@@ -53,7 +53,7 @@ body {
 /* 说话气泡 */
 #bubble {
   position: absolute;
-  top: 2px;
+  top: 10px;
   left: 50%;
   padding: 6px 13px;
   border-radius: 14px;
@@ -127,5 +127,93 @@ body {
   }
   50% {
     transform: rotate(6deg);
+  }
+}
+
+/* ---------------- 放屁 ---------------- */
+
+/* 屁股后面的绿色屁云 */
+#fart .puff {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  fill: #b7e07a;
+  fill-opacity: 0.6;
+  stroke: #8fbe4f;
+  stroke-width: 1.5;
+}
+
+#cat.farting .puff {
+  animation: puff 1.5s ease-out forwards;
+}
+
+#cat.farting .puff-b {
+  animation-delay: 0.22s;
+}
+
+#cat.farting .puff-c {
+  animation-delay: 0.44s;
+}
+
+@keyframes puff {
+  0% {
+    transform: translate(0, 0) scale(0.2);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(34px, -54px) scale(2);
+    opacity: 0;
+  }
+}
+
+/* 放屁时眯眼 */
+#cat.farting #eyes-normal {
+  opacity: 0;
+}
+
+#cat.farting #eyes-squint {
+  opacity: 1;
+}
+
+#cat.farting #fart {
+  opacity: 1;
+}
+
+/* 蹲下发力，再弹回 */
+#cat.farting #pet {
+  animation: squat 0.7s ease-out;
+}
+
+@keyframes squat {
+  0% {
+    transform: scale(1, 1);
+  }
+  35% {
+    transform: scale(1.09, 0.89) translateY(3px);
+  }
+  70% {
+    transform: scale(1.02, 0.97) translateY(1px);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/* 尾巴抬起来 */
+#cat.farting #tail {
+  animation: tail-lift 0.5s ease-out forwards;
+}
+
+@keyframes tail-lift {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-18deg);
+  }
+  100% {
+    transform: rotate(-10deg);
   }
 }

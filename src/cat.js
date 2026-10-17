@@ -50,7 +50,17 @@ function play (state, duration) {
   if (state === IDLE) return
 
   currentState = state
-  cat.classList.add(state === FART ? 'farting' : 'laughing')
+
+  // 连续触发同一个表情时，强制回流一次，让 CSS 动画能重新开始
+  void cat.getBoundingClientRect()
+
+  if (state === FART) {
+    cat.classList.add('farting')
+    say('噗~', Math.min(duration, 1400))
+  } else if (state === LAUGH) {
+    cat.classList.add('laughing')
+    say('哈哈哈', Math.min(duration, 1400))
+  }
 
   resetTimer = setTimeout(clearAll, duration)
 }

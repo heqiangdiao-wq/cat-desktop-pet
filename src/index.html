@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>猫咪萌宠</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <svg id="cat" viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="猫咪">
+      <defs>
+        <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FBD08E"/>
+          <stop offset="100%" stop-color="#F3AE5C"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 放屁时冒出的绿色屁云 -->
+      <g id="fart">
+        <circle class="puff puff-a" cx="152" cy="180" r="10"/>
+        <circle class="puff puff-b" cx="152" cy="180" r="8"/>
+        <circle class="puff puff-c" cx="152" cy="180" r="12"/>
+      </g>
+
+      <!-- 尾巴 -->
+      <path class="tail-outline"
+            d="M143 176 C170 186 190 162 179 141 C172 129 157 127 151 137"
+            fill="none" stroke="#C4803A" stroke-width="17" stroke-linecap="round"/>
+      <path class="tail-core"
+            d="M143 176 C170 186 190 162 179 141 C172 129 157 127 151 137"
+            fill="none" stroke="url(#fur)" stroke-width="12.5" stroke-linecap="round"/>
+
+      <!-- 身体 -->
+      <g id="body">
+        <ellipse cx="100" cy="164" rx="47" ry="41"
+                 fill="url(#fur)" stroke="#C4803A" stroke-width="2.5"/>
+        <ellipse cx="100" cy="178" rx="27" ry="23" fill="#FFEBCB" opacity="0.92"/>
+        <ellipse cx="76" cy="197" rx="14.5" ry="8.5"
+                 fill="#FFEBCB" stroke="#C4803A" stroke-width="2"/>
+        <ellipse cx="124" cy="197" rx="14.5" ry="8.5"
+                 fill="#FFEBCB" stroke="#C4803A" stroke-width="2"/>
+      </g>
+
+      <!-- 头部 -->
+      <g id="head">
+        <g id="ears">
+          <path d="M54 70 L64 20 L94 56 Z"
+                fill="url(#fur)" stroke="#C4803A" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M146 70 L136 20 L106 56 Z"
+                fill="url(#fur)" stroke="#C4803A" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M63 62 L69 33 L85 55 Z" fill="#F2909B"/>
+          <path d="M137 62 L131 33 L115 55 Z" fill="#F2909B"/>
+        </g>
+
+        <ellipse cx="100" cy="96" rx="56" ry="48"
+                 fill="url(#fur)" stroke="#C4803A" stroke-width="2.5"/>
+
+        <!-- 腮红 -->
+        <ellipse cx="60" cy="112" rx="11" ry="6" fill="#F6A0A6" opacity="0.5"/>
+        <ellipse cx="140" cy="112" rx="11" ry="6" fill="#F6A0A6" opacity="0.5"/>
+
+        <!-- 胡须 -->
+        <g stroke="#C4803A" stroke-width="1.8" stroke-linecap="round" opacity="0.6">
+          <path d="M41 98 L62 102"/>
+          <path d="M39 108 L62 110"/>
+          <path d="M43 118 L62 116"/>
+          <path d="M159 98 L138 102"/>
+          <path d="M161 108 L138 110"/>
+          <path d="M157 118 L138 116"/>
+        </g>
+
+        <!-- 眼睛：常态 -->
+        <g id="eyes-normal">
+          <ellipse cx="82" cy="98" rx="9.5" ry="10.5" fill="#2C2A33"/>
+          <ellipse cx="118" cy="98" rx="9.5" ry="10.5" fill="#2C2A33"/>
+          <circle cx="79" cy="94.5" r="3.2" fill="#FFFFFF"/>
+          <circle cx="115" cy="94.5" r="3.2" fill="#FFFFFF"/>
+          <circle cx="85" cy="102" r="1.6" fill="#FFFFFF" opacity="0.75"/>
+          <circle cx="121" cy="102" r="1.6" fill="#FFFFFF" opacity="0.75"/>
+        </g>
+
+        <!-- 眼睛：大笑 ^ ^ -->
+        <g id="eyes-happy">
+          <path d="M72 101 Q82 88 92 101" fill="none"
+                stroke="#2C2A33" stroke-width="3.6" stroke-linecap="round"/>
+          <path d="M108 101 Q118 88 128 101" fill="none"
+                stroke="#2C2A33" stroke-width="3.6" stroke-linecap="round"/>
+        </g>
+
+        <!-- 眼睛：放屁（眯成一条线） -->
+        <g id="eyes-squint">
+          <path d="M74 99 L90 99" stroke="#2C2A33" stroke-width="3.6" stroke-linecap="round"/>
+          <path d="M110 99 L126 99" stroke="#2C2A33" stroke-width="3.6" stroke-linecap="round"/>
+        </g>
+
+        <!-- 鼻子 -->
+        <path d="M95.5 110 L104.5 110 L100 115.5 Z" fill="#E4737A"/>
+
+        <!-- 嘴巴：常态 ω -->
+        <path id="mouth-normal" d="M91 118 Q95.5 124 100 118 Q104.5 124 109 118"
+              fill="none" stroke="#2C2A33" stroke-width="2.4" stroke-linecap="round"/>
+
+        <!-- 嘴巴：大笑（张大） -->
+        <g id="mouth-open">
+          <ellipse cx="100" cy="127" rx="13.5" ry="11.5" fill="#8A3846"/>
+          <ellipse cx="100" cy="134" rx="7.5" ry="4.5" fill="#F08495"/>
+        </g>
+      </g>
+    </svg>
+
+    <div id="bubble"></div>
+  </div>
+</body>
+</html>

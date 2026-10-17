@@ -17,6 +17,7 @@
         </linearGradient>
       </defs>
 
+      <g id="pet">
       <!-- 放屁时冒出的绿色屁云 -->
       <g id="fart">
         <circle class="puff puff-a" cx="152" cy="180" r="10"/>
@@ -25,12 +26,14 @@
       </g>
 
       <!-- 尾巴 -->
-      <path class="tail-outline"
-            d="M143 176 C170 186 190 162 179 141 C172 129 157 127 151 137"
-            fill="none" stroke="#C4803A" stroke-width="17" stroke-linecap="round"/>
-      <path class="tail-core"
-            d="M143 176 C170 186 190 162 179 141 C172 129 157 127 151 137"
-            fill="none" stroke="url(#fur)" stroke-width="12.5" stroke-linecap="round"/>
+      <g id="tail">
+        <path class="tail-outline"
+              d="M143 176 C170 186 190 162 179 141 C172 129 157 127 151 137"
+              fill="none" stroke="#C4803A" stroke-width="17" stroke-linecap="round"/>
+        <path class="tail-core"
+              d="M143 176 C170 186 190 162 179 141 C172 129 157 127 151 137"
+              fill="none" stroke="url(#fur)" stroke-width="12.5" stroke-linecap="round"/>
+      </g>
 
       <!-- 身体 -->
       <g id="body">
@@ -108,9 +111,12 @@
           <ellipse cx="100" cy="134" rx="7.5" ry="4.5" fill="#F08495"/>
         </g>
       </g>
+      </g>
     </svg>
 
     <div id="bubble"></div>
   </div>
+
+  <script src="cat.js"></script>
 </body>
 </html>

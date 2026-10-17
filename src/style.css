@@ -74,3 +74,58 @@ body {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
+
+/* ---------------- 静息动画 ---------------- */
+
+/* 呼吸：整只猫以底部为轴轻微起伏 */
+#pet {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.018, 0.986);
+  }
+}
+
+/* 眨眼：偶尔快速压扁一下眼睛 */
+#eyes-normal {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: blink 5.4s infinite;
+}
+
+@keyframes blink {
+  0%,
+  91%,
+  100% {
+    transform: scaleY(1);
+  }
+  93.5%,
+  95.5% {
+    transform: scaleY(0.06);
+  }
+}
+
+/* 甩尾：以尾巴根部为轴来回摆 */
+#tail {
+  transform-box: fill-box;
+  transform-origin: 8% 92%;
+  animation: wag 2.6s ease-in-out infinite;
+}
+
+@keyframes wag {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}

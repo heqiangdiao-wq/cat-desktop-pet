@@ -1,0 +1,13 @@
+{
+  "name": "cat-desktop-pet",
+  "productName": "猫咪萌宠",
+  "version": "1.0.0",
+  "description": "一只住在你桌面上的猫咪萌宠，会放屁，也会大笑。",
+  "main": "main.js",
+  "author": "heqiangdiao-wq",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron ."
+  }
+}

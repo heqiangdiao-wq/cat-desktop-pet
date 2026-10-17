@@ -288,3 +288,13 @@ body {
     transform: rotate(13deg);
   }
 }
+
+/* ---------------- 光标手感 ---------------- */
+
+body.over-cat {
+  cursor: grab;
+}
+
+body.over-cat:active {
+  cursor: grabbing;
+}

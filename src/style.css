@@ -217,3 +217,74 @@ body {
     transform: rotate(-10deg);
   }
 }
+
+/* ---------------- 大笑 ---------------- */
+
+/* 眼睛变成两条上弯的弧线 */
+#cat.laughing #eyes-normal {
+  opacity: 0;
+}
+
+#cat.laughing #eyes-happy {
+  opacity: 1;
+}
+
+/* 嘴巴张大 */
+#cat.laughing #mouth-normal {
+  opacity: 0;
+}
+
+#cat.laughing #mouth-open {
+  opacity: 1;
+  transform-box: fill-box;
+  transform-origin: 50% 15%;
+  animation: mouth-pop 0.32s ease-out;
+}
+
+@keyframes mouth-pop {
+  0% {
+    transform: scale(0.55);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 整只猫蹦蹦跳跳 */
+#cat.laughing #pet {
+  animation: hop 0.42s ease-in-out 4;
+}
+
+@keyframes hop {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-11px) rotate(-2.5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-7px) rotate(2.5deg);
+  }
+}
+
+/* 尾巴兴奋地快速摇 */
+#cat.laughing #tail {
+  animation: wag-fast 0.3s ease-in-out infinite;
+}
+
+@keyframes wag-fast {
+  0%,
+  100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(13deg);
+  }
+}

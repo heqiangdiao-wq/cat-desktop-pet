@@ -9,9 +9,56 @@
   "private": true,
   "scripts": {
     "start": "electron .",
-    "icon": "node tools/make-icon.js"
+    "icon": "node tools/make-icon.js",
+    "dist": "npm run icon && electron-builder --win",
+    "dist:dir": "npm run icon && electron-builder --win --dir"
   },
   "devDependencies": {
-    "electron": "^44.9.0"
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.heqiangdiao.catpet",
+    "productName": "猫咪萌宠",
+    "copyright": "MIT © 2026 heqiangdiao-wq",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "build/icon.ico"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "artifactName": "CatPet-${version}-${arch}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "猫咪萌宠",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "artifactName": "CatPet-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": true
+    },
+    "portable": {
+      "artifactName": "CatPet-Portable-${version}.${ext}"
+    }
   }
 }
